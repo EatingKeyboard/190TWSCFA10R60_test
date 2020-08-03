@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <system.h>
+#include "system.h"
 #include "alt_types.h"
-#include "altera_avalon_pio_regs.h"
 #include <unistd.h>
 
 void sdram_test(alt_u8 *base, int len) {
@@ -36,15 +35,8 @@ int main()
 	printf("Hello World!\n");
 	//usleep(10000);
     sdram_test((alt_u8 *)0x01800000,0x800000);
-    IOWR_ALTERA_AVALON_PIO_DATA(PIO_LED_BASE, 255);
     sdram_test((alt_u8 *)0x01000000,0x800000);
-    IOWR_ALTERA_AVALON_PIO_DATA(PIO_LED_BASE, 0);
-    while(1)
-    {
-    	IOWR_ALTERA_AVALON_PIO_DATA(PIO_LED_BASE, 255);
-    	usleep(1000);
-    	IOWR_ALTERA_AVALON_PIO_DATA(PIO_LED_BASE, 0);
-    	usleep(1000000);
-    }
+    while(1);
+
 	return 0;
 }

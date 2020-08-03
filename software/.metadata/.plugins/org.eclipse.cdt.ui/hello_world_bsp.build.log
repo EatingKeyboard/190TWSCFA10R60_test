@@ -1,6 +1,6 @@
-02:17:30 **** Clean-only build of configuration Nios II for project hello_world_bsp ****
+07:09:51 **** Clean-only build of configuration Nios II for project hello_world_bsp ****
 make clean 
 [BSP clean complete]
 
-02:17:30 Build Finished (took 328ms)
+07:09:51 Build Finished (took 633ms)
 
