@@ -161,7 +161,7 @@ ACDS_VERSION := 18.1
 SIM_OPTIMIZE ?= 0
 
 # The CPU reset address as needed by elf2flash
-RESET_ADDRESS ?= 0x00800000
+RESET_ADDRESS ?= 0x00008000
 
 # The specific Nios II ELF file format to use.
 NIOS2_ELF_FORMAT ?= elf32-littlenios2
@@ -170,71 +170,65 @@ NIOS2_ELF_FORMAT ?= elf32-littlenios2
 # Pre-Initialized Memory Descriptions
 #-------------------------------------
 
-# Memory: epcs
-MEM_0 := nios2_qsys_epcs_boot_rom
-$(MEM_0)_NAME := epcs
+# Memory: ram
+MEM_0 := nios2_qsys_ram
+$(MEM_0)_NAME := ram
 $(MEM_0)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
-HEX_FILES += $(HDL_SIM_DIR)/$(MEM_0).hex
-HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).hex
+HEX_FILES += $(MEM_INIT_DIR)/$(MEM_0).hex
+MEM_INIT_INSTALL_FILES += $(MEM_INIT_INSTALL_DIR)/$(MEM_0).hex
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_0).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_0).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).sym
-FLASH_FILES += $(MEM_0).flash
-$(MEM_0)_START := 0x00000000
-$(MEM_0)_END := 0x000007ff
-$(MEM_0)_SPAN := 0x00000800
-$(MEM_0)_HIERARCHICAL_PATH := epcs
+$(MEM_0)_START := 0x00008000
+$(MEM_0)_END := 0x0000a7ff
+$(MEM_0)_SPAN := 0x00002800
+$(MEM_0)_HIERARCHICAL_PATH := ram
 $(MEM_0)_WIDTH := 32
 $(MEM_0)_HEX_DATA_WIDTH := 32
 $(MEM_0)_ENDIANNESS := --little-endian-mem
 $(MEM_0)_CREATE_LANES := 0
-$(MEM_0)_EPCS_FLAGS := --epcs
-$(MEM_0)_NO_ZERO_FILL_FLAG := --no-zero-fill
 
-.PHONY: epcs
-epcs: check_elf_exists $(HDL_SIM_DIR)/$(MEM_0).hex $(HDL_SIM_DIR)/$(MEM_0).dat $(HDL_SIM_DIR)/$(MEM_0).sym $(MEM_0).flash
+.PHONY: ram
+ram: check_elf_exists $(MEM_INIT_DIR)/$(MEM_0).hex $(HDL_SIM_DIR)/$(MEM_0).dat $(HDL_SIM_DIR)/$(MEM_0).sym
 
-# Memory: ram
-MEM_1 := nios2_qsys_ram
-$(MEM_1)_NAME := ram
-$(MEM_1)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
-HEX_FILES += $(MEM_INIT_DIR)/$(MEM_1).hex
-MEM_INIT_INSTALL_FILES += $(MEM_INIT_INSTALL_DIR)/$(MEM_1).hex
+# Memory: sdram47
+MEM_1 := sdram47
+$(MEM_1)_NAME := sdram47
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_1).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_1).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).sym
-$(MEM_1)_START := 0x00008000
-$(MEM_1)_END := 0x0000a7ff
-$(MEM_1)_SPAN := 0x00002800
-$(MEM_1)_HIERARCHICAL_PATH := ram
+$(MEM_1)_START := 0x01800000
+$(MEM_1)_END := 0x01ffffff
+$(MEM_1)_SPAN := 0x00800000
+$(MEM_1)_HIERARCHICAL_PATH := sdram47
 $(MEM_1)_WIDTH := 32
 $(MEM_1)_HEX_DATA_WIDTH := 32
 $(MEM_1)_ENDIANNESS := --little-endian-mem
 $(MEM_1)_CREATE_LANES := 0
 
-.PHONY: ram
-ram: check_elf_exists $(MEM_INIT_DIR)/$(MEM_1).hex $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym
+.PHONY: sdram47
+sdram47: check_elf_exists $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym
 
-# Memory: sdram47
-MEM_2 := sdram47
-$(MEM_2)_NAME := sdram47
+# Memory: sdram48
+MEM_2 := sdram48
+$(MEM_2)_NAME := sdram48
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_2).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_2).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).sym
-$(MEM_2)_START := 0x00800000
-$(MEM_2)_END := 0x00ffffff
+$(MEM_2)_START := 0x01000000
+$(MEM_2)_END := 0x017fffff
 $(MEM_2)_SPAN := 0x00800000
-$(MEM_2)_HIERARCHICAL_PATH := sdram47
+$(MEM_2)_HIERARCHICAL_PATH := sdram48
 $(MEM_2)_WIDTH := 32
 $(MEM_2)_HEX_DATA_WIDTH := 32
 $(MEM_2)_ENDIANNESS := --little-endian-mem
 $(MEM_2)_CREATE_LANES := 0
 
-.PHONY: sdram47
-sdram47: check_elf_exists $(HDL_SIM_DIR)/$(MEM_2).dat $(HDL_SIM_DIR)/$(MEM_2).sym
+.PHONY: sdram48
+sdram48: check_elf_exists $(HDL_SIM_DIR)/$(MEM_2).dat $(HDL_SIM_DIR)/$(MEM_2).sym
 
 
 #END OF BSP SPECIFIC

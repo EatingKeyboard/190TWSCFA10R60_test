@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2_qsys'
  * SOPC Builder design path: ../../nios2_qsys.sopcinfo
  *
- * Generated: Sun Aug 02 19:55:28 CST 2020
+ * Generated: Tue Aug 04 01:05:16 CST 2020
  */
 
 /*
@@ -50,16 +50,16 @@
 
 MEMORY
 {
-    epcs : ORIGIN = 0x0, LENGTH = 2048
-    ram : ORIGIN = 0x8000, LENGTH = 10240
-    reset : ORIGIN = 0x800000, LENGTH = 32
-    sdram47 : ORIGIN = 0x800020, LENGTH = 8388576
+    reset : ORIGIN = 0x8000, LENGTH = 32
+    ram : ORIGIN = 0x8020, LENGTH = 10208
+    sdram48 : ORIGIN = 0x1000000, LENGTH = 8388608
+    sdram47 : ORIGIN = 0x1800000, LENGTH = 8388608
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_epcs = 0x0;
 __alt_mem_ram = 0x8000;
-__alt_mem_sdram47 = 0x800000;
+__alt_mem_sdram48 = 0x1000000;
+__alt_mem_sdram47 = 0x1800000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -115,7 +115,7 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > sdram47
+    } > ram
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 
@@ -311,24 +311,7 @@ SECTIONS
      *
      */
 
-    .epcs : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
-    {
-        PROVIDE (_alt_partition_epcs_start = ABSOLUTE(.));
-        *(.epcs .epcs. epcs.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_epcs_end = ABSOLUTE(.));
-    } > epcs
-
-    PROVIDE (_alt_partition_epcs_load_addr = LOADADDR(.epcs));
-
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .ram LOADADDR (.epcs) + SIZEOF (.epcs) : AT ( LOADADDR (.epcs) + SIZEOF (.epcs) )
+    .ram LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_ram_start = ABSOLUTE(.));
         *(.ram .ram. ram.*)
@@ -348,7 +331,24 @@ SECTIONS
      *
      */
 
-    .sdram47 : AT ( LOADADDR (.ram) + SIZEOF (.ram) )
+    .sdram48 : AT ( LOADADDR (.ram) + SIZEOF (.ram) )
+    {
+        PROVIDE (_alt_partition_sdram48_start = ABSOLUTE(.));
+        *(.sdram48 .sdram48. sdram48.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_sdram48_end = ABSOLUTE(.));
+    } > sdram48
+
+    PROVIDE (_alt_partition_sdram48_load_addr = LOADADDR(.sdram48));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .sdram47 : AT ( LOADADDR (.sdram48) + SIZEOF (.sdram48) )
     {
         PROVIDE (_alt_partition_sdram47_start = ABSOLUTE(.));
         *(.sdram47 .sdram47. sdram47.*)

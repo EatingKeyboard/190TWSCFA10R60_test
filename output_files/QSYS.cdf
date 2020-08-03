@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE15F23) Path("E:/QSYS/output_files/") File("QSYS.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE15F23) Path("F:/test/190TWSCFA10R60_test/output_files/") File("QSYS.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

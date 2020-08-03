@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2020-8-2 20:50:41</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1596372641642</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>E:\QSYS\software\hello_world_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>2020-8-4 2:16:03</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1596478563204</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>F:\test\190TWSCFA10R60_test\software\hello_world_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios2_qsys.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -899,20 +899,8 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <MemoryMap>
-                <slaveDescriptor>epcs</slaveDescriptor>
-                <addressRange>0x00000000 - 0x000007FF</addressRange>
-                <addressSpan>2048</addressSpan>
-                <attributes>flash, memory, non-volatile</attributes>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>pio_led</slaveDescriptor>
                 <addressRange>0x00001800 - 0x0000180F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>pio_key</slaveDescriptor>
-                <addressRange>0x00001810 - 0x0000181F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
@@ -935,8 +923,14 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>sdram48</slaveDescriptor>
+                <addressRange>0x01000000 - 0x017FFFFF</addressRange>
+                <addressSpan>8388608</addressSpan>
+                <attributes>memory</attributes>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sdram47</slaveDescriptor>
-                <addressRange>0x00800000 - 0x00FFFFFF</addressRange>
+                <addressRange>0x01800000 - 0x01FFFFFF</addressRange>
                 <addressSpan>8388608</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>

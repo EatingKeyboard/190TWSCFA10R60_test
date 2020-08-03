@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Aug 02 20:48:32 2020
+Analysis & Synthesis Status : Successful - Tue Aug 04 02:13:49 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : QSYS
 Top-level Entity Name : qsys_hello_world
 Family : Cyclone IV E
-Total logic elements : 4,435
-    Total combinational functions : 3,554
-    Dedicated logic registers : 2,574
-Total registers : 2574
-Total pins : 124
+Total logic elements : 4,494
+    Total combinational functions : 3,536
+    Dedicated logic registers : 2,638
+Total registers : 2638
+Total pins : 116
 Total virtual pins : 0
-Total memory bits : 154,816
+Total memory bits : 145,664
 Embedded Multiplier 9-bit elements : 6
 Total PLLs : 1

@@ -2,13 +2,7 @@ module qsys_hello_world(
 	input clk,
 	input rst_n,
 	
-	input  [3:0]key,
 	output [3:0]led,
-	
-	input  epcs_data0,
-	output epcs_dclk,
-	output epcs_sce,
-	output epcs_sdo,	
 	
 	output       sdram0_clk,    //IC47
 	output       sdram0_ras_n,
@@ -43,6 +37,7 @@ wire    sys_rst_n;
 //
 assign sys_rst_n = rst_n & locked;
 assign sdram0_clk = clk_100m_shift;
+assign sdram1_clk = clk_100m_shift;
 
 pll_clk u_pll_clk(
 	.inclk0             (clk),
@@ -56,13 +51,7 @@ pll_clk u_pll_clk(
     nios2_qsys u_qsys (
         .clk_clk       (clk_100m),      //     clk.clk
         .reset_reset_n (sys_rst_n),         //   reset.reset_n
-		  
-        .epcs_dclk     (epcs_dclk ),    //    epcs.dclk
-        .epcs_sce      (epcs_sce  ),    //        .sce
-        .epcs_sdo      (epcs_sdo  ),    //        .sdo
-        .epcs_data0    (epcs_data0),    //        .data0
-		  
-        .key_export    (key),           //     key.export
+		  		  
         .led_export    (led),           //     led.export
 		  
 		  .sdram47_addr  (sdram0_addr),   // sdram47.addr
@@ -73,7 +62,17 @@ pll_clk u_pll_clk(
         .sdram47_dq    (sdram0_dq),     //        .dq
         .sdram47_dqm   (sdram0_dqm),    //        .dqm
         .sdram47_ras_n (sdram0_ras_n),  //        .ras_n
-        .sdram47_we_n  (sdram0_we_n)    //        .we_n
+        .sdram47_we_n  (sdram0_we_n),   //        .we_n
+		  
+		  .sdram48_addr  (sdram1_addr),   // sdram48.addr
+        .sdram48_ba    (sdram1_ba),     //        .ba
+        .sdram48_cas_n (sdram1_cas_n),  //        .cas_n
+        .sdram48_cke   (sdram1_cke),    //        .cke
+        .sdram48_cs_n  (sdram1_cs_n),   //        .cs_n
+        .sdram48_dq    (sdram1_dq),     //        .dq
+        .sdram48_dqm   (sdram1_dqm),    //        .dqm
+        .sdram48_ras_n (sdram1_ras_n),  //        .ras_n
+        .sdram48_we_n  (sdram1_we_n)   //        .we_n
     ); 
 
 	 
