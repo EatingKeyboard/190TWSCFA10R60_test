@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+Analysis & Synthesis Status : Successful - Tue Aug 04 07:04:29 2020
+=======
+Analysis & Synthesis Status : Successful - Sun Aug 02 20:48:32 2020
+>>>>>>> parent of b166a0d... sdram @133MHz verified pass
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : QSYS
+Top-level Entity Name : qsys_hello_world
+Family : Cyclone IV E
+Total logic elements : 4,435
+    Total combinational functions : 3,554
+    Dedicated logic registers : 2,574
+Total registers : 2574
+Total pins : 124
+Total virtual pins : 0
+Total memory bits : 154,816
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 1

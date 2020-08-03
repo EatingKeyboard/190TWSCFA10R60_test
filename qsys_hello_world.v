@@ -13,7 +13,7 @@ module qsys_hello_world(
 	output       sdram0_clk,    //IC47
 	output       sdram0_ras_n,
 	output       sdram0_we_n, 
-	output       sdram0_cas_n,  
+	output       sdram0_cas_n,
 	output       sdram0_cke,  
 	output       sdram0_cs_n, 
 	inout  [31:0]sdram0_dq,   
