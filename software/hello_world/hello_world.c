@@ -1,19 +1,12 @@
-#include <stdio.h>
-<<<<<<< HEAD
-#include <system.h>
-=======
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
->>>>>>> parent of b166a0d... sdram @133MHz verified pass
 #include "alt_types.h"
 #include "altera_avalon_pio_regs.h"
 #include <unistd.h>
 
-#define sdram_rw_addr (alt_u8)(SDRAM47_BASE + 0x400000)
-
+void sdram_test(alt_u8 *base, int len);
 int main()
 {
-<<<<<<< HEAD
 	printf("Hello World!\n");
 	//usleep(10000);
     sdram_test((alt_u8 *)0x01800000,0x800000);
@@ -27,19 +20,32 @@ int main()
     	IOWR_ALTERA_AVALON_PIO_DATA(PIO_LED_BASE, 0);
     	usleep(1000000);
     }
-=======
-	alt_u8 *addr;
-	alt_u8 i;
-	printf("Hello world!\n");
 
-//	usleep(1000000);
-    addr = sdram_rw_addr;
-    for(i=0; i<100; i++)
-    	*(addr++) = i;
-    addr = sdram_rw_addr;
-    for(i=0; i<100; i++)
-    	printf("%d\n", *(addr++));
-
->>>>>>> parent of b166a0d... sdram @133MHz verified pass
 	return 0;
+}
+void sdram_test(alt_u8 *base, int len) {
+	alt_u8 *addr = base;
+	char errFlag = 0;
+	for (addr = base; addr < (base + len); addr += 0x100) {
+		for (int i = 0; i < 256; i++) {
+			*(addr + i) = i;
+		}
+		for (int i = 0; i < 256; i++) {
+			if (*(addr + i) != i) {
+				errFlag = 1;
+				printf("mem err at %08X,must=%d,now=%d\r\n", (int) addr + i, i,
+									*(addr + i));
+				break;
+			}
+		}
+		if (errFlag) {
+			break;
+		}
+	}
+	if (errFlag) {
+		printf("RAM TEST FAIL!\r\n");
+	} else {
+		printf("RAM TEST SUCCESS! BASE: %8X LEN:%8X\r\n", (int) base, len);
+	}
+
 }

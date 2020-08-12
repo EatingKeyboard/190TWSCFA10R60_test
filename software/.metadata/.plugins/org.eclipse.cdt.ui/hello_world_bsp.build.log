@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-07:09:51 **** Clean-only build of configuration Nios II for project hello_world_bsp ****
+02:22:16 **** Clean-only build of configuration Nios II for project hello_world_bsp ****
 make clean 
 [BSP clean complete]
 
-07:09:51 Build Finished (took 633ms)
-=======
-22:05:25 **** Clean-only build of configuration Nios II for project hello_world_bsp ****
-make clean 
-[BSP clean complete]
-
-22:05:25 Build Finished (took 540ms)
->>>>>>> parent of b166a0d... sdram @133MHz verified pass
+02:22:17 Build Finished (took 363ms)
 

@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-07:10:00 **** Clean-only build of configuration Nios II for project hello_world ****
+02:22:13 **** Clean-only build of configuration Nios II for project hello_world ****
 make clean 
 [hello_world clean complete]
 
-07:10:00 Build Finished (took 218ms)
-=======
-22:05:18 **** Clean-only build of configuration Nios II for project hello_world ****
-make clean 
-[hello_world clean complete]
-
-22:05:21 Build Finished (took 2s.419ms)
->>>>>>> parent of b166a0d... sdram @133MHz verified pass
+02:22:14 Build Finished (took 229ms)
 
