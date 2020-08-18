@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="d751eabe765f9116e2ac"/>
+    <hash md5_digest_80b="83fcb95a5b9bbb412977"/>
   </project>
   <file_info>
     <file device="EP4CE15F23C8" path="QSYS.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="nios2_qsys:u_qsys" name="u_qsys">
       <assignment_values>
-        <assignment_value text="QSYS_NAME nios2_qsys HAS_SOPCINFO 1 GENERATION_ID 1596369614"/>
+        <assignment_value text="QSYS_NAME nios2_qsys HAS_SOPCINFO 1 GENERATION_ID 1597766789"/>
       </assignment_values>
       <parameters/>
     </sld_info>

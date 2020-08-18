@@ -58,7 +58,7 @@
    {
       datum baseAddress
       {
-         value = "6184";
+         value = "16814120";
          type = "String";
       }
    }
@@ -87,7 +87,7 @@
    {
       datum baseAddress
       {
-         value = "4096";
+         value = "16812032";
          type = "String";
       }
    }
@@ -103,7 +103,7 @@
    {
       datum baseAddress
       {
-         value = "6160";
+         value = "16814096";
          type = "String";
       }
    }
@@ -119,7 +119,7 @@
    {
       datum baseAddress
       {
-         value = "6144";
+         value = "16814080";
          type = "String";
       }
    }
@@ -140,7 +140,7 @@
    {
       datum baseAddress
       {
-         value = "32768";
+         value = "16793600";
          type = "String";
       }
    }
@@ -185,7 +185,7 @@
       }
       datum baseAddress
       {
-         value = "6176";
+         value = "16814112";
          type = "String";
       }
    }
@@ -203,7 +203,7 @@
  <parameter name="hideFromIPCatalog" value="false" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="QSYS.qpf" />
+ <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -278,10 +278,10 @@
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
-  <parameter name="dataAddrWidth" value="24" />
+  <parameter name="dataAddrWidth" value="25" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='epcs.epcs_control_port' start='0x0' end='0x800' type='altera_avalon_epcs_flash_controller.epcs_control_port' /><slave name='nios2.debug_mem_slave' start='0x1000' end='0x1800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pio_led.s1' start='0x1800' end='0x1810' type='altera_avalon_pio.s1' /><slave name='pio_key.s1' start='0x1810' end='0x1820' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x1820' end='0x1828' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1828' end='0x1830' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='ram.s1' start='0x8000' end='0xA800' type='altera_avalon_onchip_memory2.s1' /><slave name='sdram47.s1' start='0x800000' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='epcs.epcs_control_port' start='0x0' end='0x800' type='altera_avalon_epcs_flash_controller.epcs_control_port' /><slave name='sdram47.s1' start='0x800000' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='ram.s1' start='0x1004000' end='0x1006800' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x1008800' end='0x1009000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pio_led.s1' start='0x1009000' end='0x1009010' type='altera_avalon_pio.s1' /><slave name='pio_key.s1' start='0x1009010' end='0x1009020' type='altera_avalon_pio.s1' /><slave name='sysid_qsys_0.control_slave' start='0x1009020' end='0x1009028' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1009028' end='0x1009030' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -319,8 +319,8 @@
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Fast" />
-  <parameter name="instAddrWidth" value="24" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='nios2.debug_mem_slave' start='0x1000' end='0x1800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='ram.s1' start='0x8000' end='0xA800' type='altera_avalon_onchip_memory2.s1' /><slave name='sdram47.s1' start='0x800000' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /></address-map>]]></parameter>
+  <parameter name="instAddrWidth" value="25" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='epcs.epcs_control_port' start='0x0' end='0x800' type='altera_avalon_epcs_flash_controller.epcs_control_port' /><slave name='sdram47.s1' start='0x800000' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='ram.s1' start='0x1004000' end='0x1006800' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2.debug_mem_slave' start='0x1008800' end='0x1009000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -356,7 +356,7 @@
   <parameter name="regfile_ramBlockType" value="Automatic" />
   <parameter name="register_file_por" value="false" />
   <parameter name="resetOffset" value="0" />
-  <parameter name="resetSlave" value="sdram47.s1" />
+  <parameter name="resetSlave">epcs.epcs_control_port</parameter>
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="setting_HBreakTest" value="false" />
   <parameter name="setting_HDLSimCachesCleared" value="true" />
@@ -451,7 +451,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="4" />
+  <parameter name="width" value="8" />
  </module>
  <module name="pio_led" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -462,10 +462,10 @@
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
+  <parameter name="resetValue" value="255" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="4" />
+  <parameter name="width" value="8" />
  </module>
  <module
    name="ram"
@@ -541,7 +541,7 @@
    start="nios2.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1828" />
+  <parameter name="baseAddress" value="0x01009028" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -550,7 +550,7 @@
    start="nios2.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1820" />
+  <parameter name="baseAddress" value="0x01009020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -559,7 +559,7 @@
    start="nios2.data_master"
    end="nios2.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1000" />
+  <parameter name="baseAddress" value="0x01008800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -573,7 +573,7 @@
  </connection>
  <connection kind="avalon" version="18.1" start="nios2.data_master" end="ram.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x8000" />
+  <parameter name="baseAddress" value="0x01004000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -582,7 +582,7 @@
    start="nios2.data_master"
    end="pio_key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1810" />
+  <parameter name="baseAddress" value="0x01009010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -591,7 +591,7 @@
    start="nios2.data_master"
    end="pio_led.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1800" />
+  <parameter name="baseAddress" value="0x01009000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -609,7 +609,16 @@
    start="nios2.instruction_master"
    end="nios2.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1000" />
+  <parameter name="baseAddress" value="0x01008800" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2.instruction_master"
+   end="epcs.epcs_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -618,7 +627,7 @@
    start="nios2.instruction_master"
    end="ram.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x8000" />
+  <parameter name="baseAddress" value="0x01004000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -635,8 +644,8 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="pio_key.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="pio_led.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="epcs.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="sdram47.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="epcs.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="ram.clk1" />
  <connection
    kind="interrupt"
@@ -669,12 +678,12 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="pio_led.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="epcs.reset" />
  <connection
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
    end="sdram47.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="epcs.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="ram.reset1" />
  <connection
    kind="reset"

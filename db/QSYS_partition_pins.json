@@ -20,6 +20,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led[7]",
+					"strict" : false
+				},
+				{
 					"name" : "epcs_dclk",
 					"strict" : false
 				},
@@ -249,6 +265,22 @@
 				},
 				{
 					"name" : "key[0]",
+					"strict" : false
+				},
+				{
+					"name" : "key[7]",
+					"strict" : false
+				},
+				{
+					"name" : "key[6]",
+					"strict" : false
+				},
+				{
+					"name" : "key[5]",
+					"strict" : false
+				},
+				{
+					"name" : "key[4]",
 					"strict" : false
 				},
 				{

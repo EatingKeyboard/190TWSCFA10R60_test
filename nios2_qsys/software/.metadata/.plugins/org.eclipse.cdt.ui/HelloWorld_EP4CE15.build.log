@@ -1,0 +1,6 @@
+03:13:24 **** Clean-only build of configuration Nios II for project HelloWorld_EP4CE15 ****
+make clean 
+[HelloWorld_EP4CE15 clean complete]
+
+03:13:24 Build Finished (took 212ms)
+
